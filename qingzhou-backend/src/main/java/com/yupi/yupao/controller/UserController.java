@@ -195,12 +195,7 @@ public class UserController {
         return ResultUtils.success(b);
     }
 
-    /**
-     * 获取最匹配的用户
-     *
-     * @param request
-     * @return
-     */
+
 //    @GetMapping("/match")
 //    public BaseResponse<List<User>> matchUsers(long num, HttpServletRequest request) {
 //        if (num <= 0 || num > 20) {
@@ -210,6 +205,12 @@ public class UserController {
 //        return ResultUtils.success(userService.matchUsers(num, user));
 //    }
 
+    /**
+     * 获取最匹配的用户
+     *
+     * @param request
+     * @return
+     */
     @GetMapping("/match")
     public BaseResponse<List<User>> matchUsers(long pageSize, long pageNum, HttpServletRequest request) {
         if (pageNum <= 0 || pageNum > 20) {
@@ -217,6 +218,10 @@ public class UserController {
         }
         User user = userService.getLoginUser(request);
         return ResultUtils.success(userService.matchUsers(pageSize,pageNum, user));
+    }
+
+    public void toCommend(){
+        System.out.println("commend");
     }
 
 }
