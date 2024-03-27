@@ -220,8 +220,10 @@ public class UserController {
         return ResultUtils.success(userService.matchUsers(pageSize,pageNum, user));
     }
 
-    public void toCommend(){
+    public void toCommend(long num, HttpServletRequest request){
+        System.out.println("num =" + num);
         System.out.println("commend");
+
     }
 
 }
